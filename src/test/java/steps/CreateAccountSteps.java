@@ -7,13 +7,6 @@ import runner.RunnerTest;
 
 public class CreateAccountSteps extends RunnerTest {
 
-
-
-    @When("^access the user registration$")
-    public void accessTheUserRegistration() throws Throwable {
-
-    }
-
     @When("^I fill the registration form$")
     public void iFillTheRegistrationForm() throws Throwable {
 

@@ -7,7 +7,7 @@ Feature: create account
   @createAccountWithSuccess
   Scenario: Create new user with success
     Given I am on the login page
-    When access the user registration
+    When I access the user registration page
     And I fill the registration form
     And click on Create an Account button
     Then I see the new account message

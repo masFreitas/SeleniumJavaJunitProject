@@ -26,6 +26,7 @@ public class RunnerTest {
     @BeforeClass
     public static void start() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 
     @AfterClass
