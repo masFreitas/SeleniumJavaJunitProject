@@ -16,7 +16,6 @@ public class HomePage extends Utils {
     }
 
     public void accessWebsite() {
-        driver.get("https://magento.softwaretestingboard.com/");
         waitElementToBePresentOnPage(signInButton, 10);
     }
     public void accessLoginPage() {

@@ -27,6 +27,7 @@ public class RunnerTest {
     public static void start() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.get("https://magento.softwaretestingboard.com/");
     }
 
     @AfterClass
