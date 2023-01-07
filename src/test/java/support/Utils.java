@@ -16,7 +16,7 @@ public class Utils extends RunnerTest {
 
     public String getRandomEmail() {
         String emailName = "mateus_";
-        String emailProvider = "freitas.com";
+        String emailProvider = "@freitas.com";
 
         Random random = new Random();
         int min = 1;

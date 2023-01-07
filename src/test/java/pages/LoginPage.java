@@ -14,6 +14,5 @@ public class LoginPage extends Utils {
 
     public void accessUserRegistrationPage() {
         driver.findElement(accessRegistrationBtn).click();
-        waitElementToBePresentOnPage(By.xpath("//*[@id=\"maincontent\"]/div[1]/h1/span[contains(text(),'Create New Customer Account')]"), 10);
     }
 }
