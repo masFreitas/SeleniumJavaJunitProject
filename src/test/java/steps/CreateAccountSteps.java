@@ -16,8 +16,8 @@ public class CreateAccountSteps extends RunnerTest {
         createAccountPage.fillLastnameField("Freitas");
         createAccountPage.checkNewsletter();
         createAccountPage.fillEmailField();
-        createAccountPage.fillPasswordField("Teste123");
-        createAccountPage.fillConfirmPasswordField("Teste123");
+        createAccountPage.fillPasswordField();
+        createAccountPage.fillConfirmPasswordField();
 
     }
 
@@ -34,7 +34,7 @@ public class CreateAccountSteps extends RunnerTest {
 
     @Then("^I access the My Account page$")
     public void iAccessTheMyAccountPage() throws Throwable {
-
+        createAccountPage.checkMyAccountPage();
     }
 
 }

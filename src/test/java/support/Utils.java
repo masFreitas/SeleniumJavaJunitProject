@@ -1,10 +1,12 @@
 package support;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import runner.RunnerTest;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class Utils extends RunnerTest {
@@ -25,5 +27,12 @@ public class Utils extends RunnerTest {
 
         return emailName + result + emailProvider;
 
+    }
+
+    public String getRandomPassword() {
+        char[] possibleCharacters = (new String("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()-_=+[{]}\\|;:\'\",<.>/?")).toCharArray();
+        String randomPsw = RandomStringUtils.random(10, 0, possibleCharacters.length-1, true, true, possibleCharacters, new SecureRandom() );
+        System.out.println(randomPsw);
+        return randomPsw;
     }
 }

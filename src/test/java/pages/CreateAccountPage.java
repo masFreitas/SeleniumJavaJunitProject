@@ -16,6 +16,9 @@ public class CreateAccountPage extends Utils {
     private By confirmPasswordField = By.id("password-confirmation");
     private By createAccountBtn = By.xpath("//*[@title='Create an Account']");
     private By getCreateAccountMessage = By.xpath("//*[.='Thank you for registering with Fake Online Clothing Store.']");
+    private By getMyAccountPageTitle = By.xpath("//*[@class=\"page-title\"]/span");
+
+    private String password = getRandomPassword();
 
     public CreateAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -38,12 +41,12 @@ public class CreateAccountPage extends Utils {
         driver.findElement(emailField).sendKeys(getRandomEmail());
     }
 
-    public void fillPasswordField(String password) {
+    public void fillPasswordField() {
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    public void fillConfirmPasswordField(String confirmPassword) {
-        driver.findElement(confirmPasswordField).sendKeys(confirmPassword);
+    public void fillConfirmPasswordField() {
+        driver.findElement(confirmPasswordField).sendKeys(password);
     }
 
     public void clickCreateAccountBtn() {
@@ -54,6 +57,10 @@ public class CreateAccountPage extends Utils {
         waitElementToBePresentOnPage(getCreateAccountMessage, 15);
         String successTextMessage = driver.findElement(getCreateAccountMessage).getText();
         Assert.assertTrue(successTextMessage, true);
+    }
+
+    public void checkMyAccountPage() {
+        Assert.assertTrue(String.valueOf(getMyAccountPageTitle), true);
     }
 
 
