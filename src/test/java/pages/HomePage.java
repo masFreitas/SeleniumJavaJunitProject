@@ -10,6 +10,8 @@ public class HomePage extends RunnerTest {
     private By accessRegistrationBtn = By.xpath("//*[@class='action create primary']/span");
 
     public void accessWebsite() {
+        getDriver(Browser.CHROME);
+        getDriver().manage().window().maximize();
         getDriver().get("https://magento.softwaretestingboard.com/");
         Utils.waitElementToBePresentOnPage(signInButton, 10);
     }
