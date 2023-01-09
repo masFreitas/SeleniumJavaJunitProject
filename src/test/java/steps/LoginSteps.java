@@ -1,6 +1,5 @@
 package steps;
 
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.LoginPage;
 import runner.RunnerTest;

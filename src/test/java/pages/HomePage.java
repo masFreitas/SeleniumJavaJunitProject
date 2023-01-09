@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import runner.RunBase;
 import runner.RunnerTest;
 import support.Utils;
 
@@ -22,10 +21,5 @@ public class HomePage extends RunnerTest {
 
     public void seeLoginUser(String userName) {
         Utils.waitElementToBePresentOnPage(By.xpath("//*[@class='logged-in'][contains(text(),'" + userName + "')]"), 20);
-//        getDriver().findElement(By.xpath("//*[@class='logged-in'][contains(tex
-
-
-
-
     }
 }
