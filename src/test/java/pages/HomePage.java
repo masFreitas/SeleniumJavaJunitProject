@@ -19,4 +19,13 @@ public class HomePage extends RunnerTest {
         getDriver().findElement(signInButton).click();
         Utils.waitElementToBePresentOnPage(accessRegistrationBtn, 10);
     }
+
+    public void seeLoginUser(String userName) {
+        Utils.waitElementToBePresentOnPage(By.xpath("//*[@class='logged-in'][contains(text(),'" + userName + "')]"), 20);
+//        getDriver().findElement(By.xpath("//*[@class='logged-in'][contains(tex
+
+
+
+
+    }
 }

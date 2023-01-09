@@ -17,7 +17,6 @@ public class CreateAccountSteps extends RunnerTest {
         createAccountPage.fillEmailField();
         createAccountPage.fillPasswordField();
         createAccountPage.fillConfirmPasswordField();
-
     }
 
     @When("^click on Create an Account button$")

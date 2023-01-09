@@ -3,10 +3,7 @@ package runner;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import static cucumber.api.SnippetType.CAMELCASE;
 
@@ -15,7 +12,7 @@ import static cucumber.api.SnippetType.CAMELCASE;
         snippets = CAMELCASE,
         plugin = {}, //use to configure reports
         features = "src/test/resources/features", //directory where feature are
-        tags = {"~@ignore"}, //use to run tagged BBDs
+        tags = {"@login"}, //use to run tagged BBDs
         glue = {"steps"} //directory where steps are
 )
 
