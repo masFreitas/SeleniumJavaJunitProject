@@ -11,12 +11,12 @@ import java.util.Random;
 
 public class Utils extends RunnerTest {
 
-    public void waitElementToBePresentOnPage(By element, int time) {
-        WebDriverWait wait = new WebDriverWait(driver, time);
+    public static void waitElementToBePresentOnPage(By element, int time) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), time);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public String getRandomEmail() {
+    public static String getRandomEmail() {
         String emailName = "mateus_";
         String emailProvider = "@freitas.com";
 
@@ -29,7 +29,7 @@ public class Utils extends RunnerTest {
 
     }
 
-    public String getRandomPassword() {
+    public static String getRandomPassword() {
         char[] possibleCharacters = (new String("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()-_=+[{]}\\|;:\'\",<.>/?")).toCharArray();
         String randomPsw = RandomStringUtils.random(10, 0, possibleCharacters.length-1, true, true, possibleCharacters, new SecureRandom() );
         System.out.println(randomPsw);

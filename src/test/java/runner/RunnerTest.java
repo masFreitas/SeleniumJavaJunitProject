@@ -19,16 +19,7 @@ import static cucumber.api.SnippetType.CAMELCASE;
         glue = {"steps"} //directory where steps are
 )
 
-public class RunnerTest {
-
-    public static WebDriver driver;
-
-    @BeforeClass
-    public static void start() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://magento.softwaretestingboard.com/");
-    }
+public class RunnerTest extends RunBase{
 
     @AfterClass
     public static void stop() {

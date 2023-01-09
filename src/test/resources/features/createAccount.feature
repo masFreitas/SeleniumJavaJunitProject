@@ -12,3 +12,12 @@ Feature: create account
     And click on Create an Account button
     Then I see the new account message
     And I access the My Account page
+
+  @createAccountWithSuccess
+  Scenario: Create new user with success2
+    Given I am on the login page
+    When I access the user registration page
+    And I fill the registration form
+    And click on Create an Account button
+    Then I see the new account message
+    And I access the My Account page

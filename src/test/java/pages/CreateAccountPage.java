@@ -2,12 +2,10 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import runner.RunnerTest;
 import support.Utils;
 
-public class CreateAccountPage extends Utils {
-
-    WebDriver driver;
+public class CreateAccountPage extends RunnerTest {
     private By firstNameField = By.id("firstname");
     private By lastNameField= By.id("lastname");
     private By newsletterSelect = By.id("is_subscribed");
@@ -18,44 +16,40 @@ public class CreateAccountPage extends Utils {
     private By getCreateAccountMessage = By.xpath("//*[.='Thank you for registering with Fake Online Clothing Store.']");
     private By getMyAccountPageTitle = By.xpath("//*[@class=\"page-title\"]/span");
 
-    private String password = getRandomPassword();
-
-    public CreateAccountPage(WebDriver driver) {
-        this.driver = driver;
-    }
+    private String password = Utils.getRandomPassword();
 
     public void fillFirstnameField(String firstname) {
-        waitElementToBePresentOnPage(firstNameField, 10);
-        driver.findElement(firstNameField).sendKeys(firstname);
+        Utils.waitElementToBePresentOnPage(firstNameField, 10);
+        getDriver().findElement(firstNameField).sendKeys(firstname);
     }
 
     public void fillLastnameField(String lastname) {
-        driver.findElement(lastNameField).sendKeys(lastname);
+        getDriver().findElement(lastNameField).sendKeys(lastname);
     }
 
     public void checkNewsletter() {
-        driver.findElement(newsletterSelect).click();
+        getDriver().findElement(newsletterSelect).click();
     }
 
     public void fillEmailField() {
-        driver.findElement(emailField).sendKeys(getRandomEmail());
+        getDriver().findElement(emailField).sendKeys(Utils.getRandomEmail());
     }
 
     public void fillPasswordField() {
-        driver.findElement(passwordField).sendKeys(password);
+        getDriver().findElement(passwordField).sendKeys(password);
     }
 
     public void fillConfirmPasswordField() {
-        driver.findElement(confirmPasswordField).sendKeys(password);
+        getDriver().findElement(confirmPasswordField).sendKeys(password);
     }
 
     public void clickCreateAccountBtn() {
-        driver.findElement(createAccountBtn).click();
+        getDriver().findElement(createAccountBtn).click();
     }
 
     public void checkSuccessMessage() {
-        waitElementToBePresentOnPage(getCreateAccountMessage, 15);
-        String successTextMessage = driver.findElement(getCreateAccountMessage).getText();
+        Utils.waitElementToBePresentOnPage(getCreateAccountMessage, 15);
+        String successTextMessage = getDriver().findElement(getCreateAccountMessage).getText();
         Assert.assertTrue(successTextMessage, true);
     }
 
