@@ -31,8 +31,8 @@ public class Utils extends RunnerTest {
 
     public static String getRandomPassword() {
         char[] possibleCharacters = (new String("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()-_=+[{]}\\|;:\'\",<.>/?")).toCharArray();
-        String randomPsw = RandomStringUtils.random(10, 0, possibleCharacters.length-1, true, true, possibleCharacters, new SecureRandom() );
-        System.out.println(randomPsw);
+        String randomString = RandomStringUtils.random(10, 0, possibleCharacters.length-1, true, true, possibleCharacters, new SecureRandom() );
+        String randomPsw = randomString + "&*";
         return randomPsw;
     }
 }
