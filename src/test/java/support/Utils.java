@@ -13,7 +13,7 @@ public class Utils extends RunnerTest {
 
     public static void waitElementToBePresentOnPage(By element, int time) {
         WebDriverWait wait = new WebDriverWait(getDriver(), time);
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        wait.until(ExpectedConditions.presenceOfElementLocated(element));
     }
 
     public static String getRandomEmail() {

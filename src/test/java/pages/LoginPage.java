@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import runner.RunnerTest;
+import support.Utils;
 
 public class LoginPage extends RunnerTest {
     private By accessRegistrationBtn = By.xpath("//*[@class='action create primary']/span");
@@ -23,5 +24,9 @@ public class LoginPage extends RunnerTest {
 
     public void clickSigninBtn() {
         getDriver().findElement(signinBtn).click();
+    }
+
+    public void seeMessage(String message) {
+        Utils.waitElementToBePresentOnPage(By.xpath("//*[.=" + message + ")]"), 20);
     }
 }
