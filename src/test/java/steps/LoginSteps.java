@@ -1,7 +1,9 @@
 package steps;
 
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pages.HomePage;
 import pages.LoginPage;
 import runner.RunnerTest;
 import support.Utils;
@@ -9,8 +11,16 @@ import support.Utils;
 public class LoginSteps extends RunnerTest {
 
     LoginPage loginPage = new LoginPage();
-    private String email = "mateustcteste@hotmail.com";
-    private String passwd = "Teste@123";
+    HomePage homePage = new HomePage();
+
+    private String email = "mateustcteste@gmail.com";
+    private String passwd = "12345";
+
+    @Given("^I am on the login page$")
+    public void iAmOnTheLoginPage() throws Throwable {
+        homePage.accessWebsite();
+        homePage.accessLoginPage();
+    }
 
     @When("^I access the user registration page$")
     public void accessTheUserRegistration() throws Throwable {

@@ -6,9 +6,9 @@ import support.Utils;
 
 public class LoginPage extends RunnerTest {
     private By accessRegistrationBtn = By.xpath("//*[@class='action create primary']/span");
-    private By emailField = By.id("email");
-    private By passwdField = By.id("pass");
-    private By signinBtn = By.id("send2");
+    private By emailField = By.name("email");
+    private By passwdField = By.name("password");
+    private By signinBtn = By.xpath("//button[.='Login']");
 
     public void accessUserRegistrationPage() {
         getDriver().findElement(accessRegistrationBtn).click();

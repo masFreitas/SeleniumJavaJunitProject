@@ -5,21 +5,22 @@ import runner.RunnerTest;
 import support.Utils;
 
 public class HomePage extends RunnerTest {
-    private By signInButton = By.xpath("//a[contains(text(),'Sign In')]");
-    private By accessRegistrationBtn = By.xpath("//*[@class='action create primary']/span");
+    private By logo = By.className("logo");
+    private By signInButton = By.xpath("//*[.=' Signup / Login']/i");
+    private By loginText = By.xpath("//*[h2='Login to your account']");
 
     public void accessWebsite() {
         getDriver(Browser.CHROME);
         getDriver().manage().window().maximize();
-        getDriver().get("https://magento.softwaretestingboard.com/");
-        Utils.waitElementToBePresentOnPage(signInButton, 10);
+        getDriver().get("https://automationexercise.com/");
+        Utils.waitElementToBePresentOnPage(logo, 10);
     }
     public void accessLoginPage() {
         getDriver().findElement(signInButton).click();
-        Utils.waitElementToBePresentOnPage(accessRegistrationBtn, 10);
+        Utils.waitElementToBePresentOnPage(loginText, 10);
     }
 
     public void seeLoginUser(String userName) {
-        Utils.waitElementToBePresentOnPage(By.xpath("//*[@class='logged-in'][contains(text(),'" + userName + "')]"), 20);
+        Utils.waitElementToBePresentOnPage(By.xpath("//*[.='"+userName+"']/b"), 20);
     }
 }
