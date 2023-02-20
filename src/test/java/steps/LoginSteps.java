@@ -3,6 +3,7 @@ package steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pages.GlobalPage;
 import pages.HomePage;
 import pages.LoginPage;
 import runner.RunnerTest;
@@ -12,13 +13,14 @@ public class LoginSteps extends RunnerTest {
 
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
+    GlobalPage globalPage = new GlobalPage();
 
     private String email = "mateustcteste@gmail.com";
     private String passwd = "12345";
 
     @Given("^I am on the login page$")
     public void iAmOnTheLoginPage() throws Throwable {
-        homePage.accessWebsite();
+        globalPage.accessWebsite();
         homePage.accessLoginPage();
     }
 

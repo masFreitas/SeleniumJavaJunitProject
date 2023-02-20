@@ -1,61 +1,99 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 import runner.RunnerTest;
 import support.Utils;
 
 public class CreateAccountPage extends RunnerTest {
-    private By firstNameField = By.id("firstname");
-    private By lastNameField= By.id("lastname");
-    private By newsletterSelect = By.id("is_subscribed");
-    private By emailField = By.id("email_address");
-    private By passwordField = By.id("password");
-    private By confirmPasswordField = By.id("password-confirmation");
-    private By createAccountBtn = By.xpath("//*[@title='Create an Account']");
-    private By getCreateAccountMessage = By.xpath("//*[.='Thank you for registering with Fake Online Clothing Store.']");
-    private By getMyAccountPageTitle = By.xpath("//*[@class=\"page-title\"]/span");
+    private By nameField = By.name("name");
+    private By emailField = By.cssSelector("input[data-qa='signup-email']");
+    private By signupBtn = By.cssSelector("button[data-qa='signup-button']");
+    private By titleBtn = By.id("id_gender1");
+    private By password = By.id("password");
+    private By selectDays = By.id("days");
+    private By selectMonths = By.id("months");
+    private By selectYears = By.id("years");
+    private By firstNameField = By.id("first_name");
+    private By lastNameField = By.id("last_name");
+    private By addressField = By.id("address1");
+    private By selectCountry = By.id("country");
+    private By stateField = By.id("state");
+    private By cityField = By.id("city");
+    private By zipcodeField = By.id("zipcode");
+    private By mobileNumberField = By.id("mobile_number");
+    private By createAccountBtn = By.cssSelector("button[data-qa='create-account']");
 
-    private String password = Utils.getRandomPassword();
-
-    public void fillFirstnameField(String firstname) {
-        Utils.waitElementToBePresentOnPage(firstNameField, 10);
-        getDriver().findElement(firstNameField).sendKeys(firstname);
+    public void fillNameField(String name) {
+        Utils.waitElementToBePresentOnPage(nameField, 20);
+        getDriver().findElement(nameField).sendKeys(name);
     }
 
-    public void fillLastnameField(String lastname) {
-        getDriver().findElement(lastNameField).sendKeys(lastname);
+    public void fillEmailField(String email) {
+        getDriver().findElement(emailField).sendKeys(email);
     }
 
-    public void checkNewsletter() {
-        getDriver().findElement(newsletterSelect).click();
+    public void clickSignupBtn() {
+        getDriver().findElement(signupBtn).click();
     }
 
-    public void fillEmailField() {
-        getDriver().findElement(emailField).sendKeys(Utils.getRandomEmail());
+    public void selectTitle() {
+        Utils.waitElementToBePresentOnPage(titleBtn, 30);
+        getDriver().findElement(titleBtn).click();
     }
 
-    public void fillPasswordField() {
-        getDriver().findElement(passwordField).sendKeys(password);
+    public void fillPassword(String passwd) {
+        getDriver().findElement(password).sendKeys(passwd);
     }
 
-    public void fillConfirmPasswordField() {
-        getDriver().findElement(confirmPasswordField).sendKeys(password);
+    public void selectDateOfBirth() {
+        Select select_day = new Select(getDriver().findElement(selectDays));
+        select_day.selectByValue("27");
+
+        Select select_month = new Select(getDriver().findElement(selectMonths));
+        select_month.selectByVisibleText("October");
+
+        Select selec_year = new Select(getDriver().findElement(selectYears));
+        selec_year.selectByValue("1998");
     }
 
-    public void clickCreateAccountBtn() {
+    public void fillFirstName(String firstName) {
+        getDriver().findElement(firstNameField).sendKeys(firstName);
+    }
+
+    public void fillLastName(String lastName) {
+        getDriver().findElement(lastNameField).sendKeys(lastName);
+    }
+
+    public void fillAddress(String address) {
+        getDriver().findElement(addressField).sendKeys(address);
+    }
+
+    public void selectCountry() {
+        Utils.waitElementToBePresentOnPage(selectCountry, 15);
+        Select select_country = new Select(getDriver().findElement(selectCountry));
+        select_country.selectByVisibleText("Singapore");
+    }
+
+    public void fillState(String state) {
+        getDriver().findElement(stateField).sendKeys(state);
+    }
+
+    public void fillCity(String city) {
+        getDriver().findElement(cityField).sendKeys(city);
+    }
+
+    public void fillZipCode(String zip) {
+        getDriver().findElement(zipcodeField).sendKeys(zip);
+    }
+
+    public void fillMobileNumber(String mobile) {
+        getDriver().findElement(mobileNumberField).sendKeys(mobile);
+    }
+
+    public void clickCreateAccount() {
+        Utils.waitElementToBeClickable(createAccountBtn, 10);
         getDriver().findElement(createAccountBtn).click();
     }
-
-    public void checkSuccessMessage() {
-        Utils.waitElementToBePresentOnPage(getCreateAccountMessage, 15);
-        String successTextMessage = getDriver().findElement(getCreateAccountMessage).getText();
-        Assert.assertTrue(successTextMessage, true);
-    }
-
-    public void checkMyAccountPage() {
-        Assert.assertTrue(String.valueOf(getMyAccountPageTitle), true);
-    }
-
 
 }

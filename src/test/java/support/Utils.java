@@ -16,6 +16,11 @@ public class Utils extends RunnerTest {
         wait.until(ExpectedConditions.presenceOfElementLocated(element));
     }
 
+    public static void waitElementToBeClickable(By element, int time) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), time);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
     public static String getRandomEmail() {
         String emailName = "mateus_";
         String emailProvider = "@freitas.com";

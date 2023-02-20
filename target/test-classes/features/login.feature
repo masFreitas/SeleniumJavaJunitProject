@@ -4,7 +4,7 @@ Feature: Login
   I want to login into the application
   To use all the website features
 
-  @login @success @teste
+  @login @success
   Scenario: Login with success
     Given I am on the login page
     When I fill email and password

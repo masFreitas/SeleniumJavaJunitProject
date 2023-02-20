@@ -9,7 +9,6 @@ public class HomeSteps extends RunnerTest {
 
     HomePage homePage = new HomePage();
 
-
     @Then("^I login into the application$")
     public void iLoginIntoTheApplication() throws Throwable {
         homePage.seeLoginUser("Mateus");
