@@ -16,7 +16,7 @@ Feature: Login
     When I fill email and password with invalid user
     Then I see "Your email or password is incorrect!" message
 
-  @login @error
+  @login @error2
   Scenario: Login without fill fields
     Given I am on the login page
     When I dont fill the field and click sign in

@@ -30,9 +30,4 @@ public class LoginPage extends RunnerTest {
     public void seeMessage(String message) {
         Utils.waitElementToBePresentOnPage(By.xpath("//*[contains(text(), \'"+message+"\')]"), 20);
     }
-
-    public void compareUrl() {
-        String currentUrl = getDriver().getCurrentUrl();
-        Assert.assertEquals(currentUrl, "https://automationexercise.com/login");
-    }
 }

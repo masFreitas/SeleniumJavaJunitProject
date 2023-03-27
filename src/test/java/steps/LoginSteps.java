@@ -55,6 +55,6 @@ public class LoginSteps extends RunnerTest {
 
     @Then("^I continue on the same page$")
     public void iContinueOnTheSamePage() throws Throwable {
-        loginPage.compareUrl();
+        Utils.compareUrl("https://automationexercise.com/login");
     }
 }

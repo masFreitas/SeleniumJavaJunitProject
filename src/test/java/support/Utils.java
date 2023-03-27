@@ -1,6 +1,7 @@
 package support;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,7 +21,10 @@ public class Utils extends RunnerTest {
         WebDriverWait wait = new WebDriverWait(getDriver(), time);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
+    public static void compareUrl(String currentUrl) {
+        String getURL = getDriver().getCurrentUrl();
+        Assert.assertEquals(getURL, currentUrl);
+    }
     public static String getRandomEmail() {
         String emailName = "mateus_";
         String emailProvider = "@freitas.com";

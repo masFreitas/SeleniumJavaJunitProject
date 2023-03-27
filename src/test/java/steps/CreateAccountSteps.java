@@ -50,4 +50,14 @@ public class CreateAccountSteps extends RunnerTest {
         createAccountPage.clickCreateAccount();
     }
 
+    @When("^I fill the Name with success$")
+    public void iFillTheNameWithSuccess() throws Throwable {
+        createAccountPage.fillNameField("Mateus");
+    }
+
+    @When("^I fill the Email field with an invalid data$")
+    public void iFillTheEmailFieldWithAnInvalidData() throws Throwable {
+        createAccountPage.fillEmailField("randomEmail");
+    }
+
     }
