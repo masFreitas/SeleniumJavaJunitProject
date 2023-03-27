@@ -12,7 +12,7 @@ import static cucumber.api.SnippetType.CAMELCASE;
         snippets = CAMELCASE,
         plugin = {}, //use to configure reports
         features = "src/test/resources/features", //directory where feature are
-        tags = {"@teste"}, //use to run tagged BBDs
+        tags = {"@login"}, //use to run tagged BBDs
         glue = {"steps"} //directory where steps are
 )
 

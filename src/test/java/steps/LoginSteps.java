@@ -52,4 +52,9 @@ public class LoginSteps extends RunnerTest {
     public void iSeeMessage(String arg1) throws Throwable {
         loginPage.seeMessage(arg1);
     }
+
+    @Then("^I continue on the same page$")
+    public void iContinueOnTheSamePage() throws Throwable {
+        loginPage.compareUrl();
+    }
 }

@@ -14,10 +14,10 @@ Feature: Login
   Scenario: Login with invalid user
     Given I am on the login page
     When I fill email and password with invalid user
-    Then I see "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later." message
+    Then I see "Your email or password is incorrect!" message
 
   @login @error
   Scenario: Login without fill fields
     Given I am on the login page
     When I dont fill the field and click sign in
-    Then I see "A login and a password are required." message
+    Then I continue on the same page

@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import runner.RunnerTest;
 import support.Utils;
@@ -27,6 +28,11 @@ public class LoginPage extends RunnerTest {
     }
 
     public void seeMessage(String message) {
-        Utils.waitElementToBePresentOnPage(By.xpath("//*[.=" + message + ")]"), 20);
+        Utils.waitElementToBePresentOnPage(By.xpath("//*[contains(text(), \'"+message+"\')]"), 20);
+    }
+
+    public void compareUrl() {
+        String currentUrl = getDriver().getCurrentUrl();
+        Assert.assertEquals(currentUrl, "https://automationexercise.com/login");
     }
 }
